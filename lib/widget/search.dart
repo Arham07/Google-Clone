@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_clone/screens/search_screen.dart';
 import '../utilities/colors.dart';
 
 class Search extends StatelessWidget {
@@ -24,7 +25,14 @@ class Search extends StatelessWidget {
         SizedBox(
           width: size.width > 780 ? size.width * 0.4 : size.width * 0.9,
           child: TextFormField(
-            style: const TextStyle(color: Colors.black54),
+            onFieldSubmitted: (query) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SearchScreen(searchQuery: query, start: '0',),
+                ),
+              );
+            },
+            style: const TextStyle(color: Colors.white),
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               // prefixIconConstraints: BoxConstraints(maxHeight: 14),
@@ -35,7 +43,9 @@ class Search extends StatelessWidget {
               ),
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset('assets/images/mic-icon.svg',),
+                child: SvgPicture.asset(
+                  'assets/images/mic-icon.svg',
+                ),
               ),
               // fillColor: Colors.white,
               // filled: true,

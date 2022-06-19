@@ -20,11 +20,10 @@ class MyApp extends StatelessWidget {
       title: 'Google Clone',
       theme:
           ThemeData.dark().copyWith(scaffoldBackgroundColor: backgroundColor),
-      home: SearchScreen(),
-      // home: const ResponsiveScreenLayout(
-      //   webScreenLayout: WebScreenLayout(),
-      //   mobScreenLayout: MobileScreenLayout(),
-      // ),
+      home: const ResponsiveScreenLayout(
+        webScreenLayout: WebScreenLayout(),
+        mobScreenLayout: MobileScreenLayout(),
+      ),
     );
   }
 }
