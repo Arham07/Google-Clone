@@ -71,25 +71,22 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
             children: [
               SizedBox(height: size.height * 0.25),
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // since children of column are not supposed to be 'spaced between'
-                    Column(
-                      children: [
-                        const Search(),
-                        SizedBox(
-                          height: size.height * 0.04,
-                        ),
-                        const SearchButtons(),
-                        SizedBox(
-                          height: size.height * 0.04,
-                        ),
-                        const TranslationButtons(),
-                      ],
-                    ),
-                    const MobileFooter(),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // since children of column are not supposed to be 'spaced between'
+                      Column(
+                        children: [
+                          const Search(),
+                          SizedBox(
+                            height: size.height * 0.04,
+                          ),
+                        ],
+                      ),
+                      const MobileFooter(),
+                    ],
+                  ),
                 ),
               ),
             ],

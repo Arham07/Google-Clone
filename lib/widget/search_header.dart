@@ -37,7 +37,7 @@ class SearchHeader extends StatelessWidget {
             ),
             height: 44,
             child: TextField(
-              onSubmitted: (text) {
+              // onSubmitted: (text) {
                 // if (text.trim() != "") {
                 // Navigator.of(context).push(
                 //   MaterialPageRoute(
@@ -47,10 +47,18 @@ class SearchHeader extends StatelessWidget {
                 //   ),
                 // );
                 // }
-              },
+                onSubmitted: (query) {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SearchScreen(searchQuery: query, start: '0',),
+                    ),
+                  );
+                },
+              // },
               style: const TextStyle(fontSize: 16),
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
+
                 suffixIcon: Container(
                   constraints: const BoxConstraints(maxWidth: 150),
                   child: Padding(
