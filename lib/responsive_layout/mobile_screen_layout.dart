@@ -71,18 +71,20 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
             children: [
               SizedBox(height: size.height * 0.25),
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: const [
-                        Search(),
-                        SizedBox(height: 20),
-                        TranslationButtons(),
-                      ],
-                    ),
-                    const MobileFooter(),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: const [
+                          Search(),
+                          SizedBox(height: 20),
+                          TranslationButtons(),
+                        ],
+                      ),
+                      const MobileFooter(),
+                    ],
+                  ),
                 ),
               ),
             ],

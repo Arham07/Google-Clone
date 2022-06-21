@@ -45,7 +45,7 @@ class SearchScreen extends StatelessWidget {
                 // showing search results
                 FutureBuilder<Map<String, dynamic>>(
                   future: ApiService().fetchData(
-                      context: context, queryTerm: searchQuery, start: start),
+                queryTerm: searchQuery, start: start),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       //

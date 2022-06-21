@@ -8,7 +8,7 @@ class ApiService {
   bool isDummyData = false;
 
   Future<Map<String, dynamic>> fetchData(
-      { required BuildContext context,
+      {
         required String queryTerm,
         String start = "0"}) async {
     var data;
